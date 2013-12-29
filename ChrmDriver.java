@@ -7,13 +7,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class IEDriver {
 
-    private static String driverLocation = "E:/selenium-2.39.0/IEDriverServer_x64_2.39.0/IEDriverServer.exe";
+public class ChrmDriver {
+    
+    private static String driverLocation = "E:/selenium-2.39.0/chromedriver/chromedriver.exe";
     
     public static void main(String[] args) throws NoSuchElementException {    
         
@@ -23,10 +24,10 @@ public class IEDriver {
         Logger logger = Logger.getLogger ("");
         logger.setLevel (Level.SEVERE);
         
-        //set the executable IE server property
-        System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+        //set the executable Chrome server property
+        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         // Create a new instance of IE driver
-        WebDriver driver = new InternetExplorerDriver();
+        WebDriver driver = new ChromeDriver();
         
         // And now use this to visit Google
         driver.get("http://www.google.com");
